@@ -44,10 +44,10 @@ int _getKthAncestor(Node *root, int node, int givenNode, int k)
     for(int i=1; i<=node; i++) ancestor[i] = 0;
     _bfs(root, node, ancestor);
 
-    int ancestorNum = 0, kthAncestor;
+    int ancestorNum = 0, kthAncestor = givenNode;
     while(true)
     {
-        kthAncestor = ancestor[givenNode];
+        kthAncestor = ancestor[kthAncestor];
         ancestorNum++;
         if(ancestorNum==k || kthAncestor==-1) break;
     }
